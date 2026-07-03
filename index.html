@@ -117,21 +117,22 @@ nav.scrolled{background:rgba(10,14,20,.85);backdrop-filter:blur(14px);box-shadow
 .dot{width:11px;height:11px;border-radius:50%}
 .dot:nth-child(1){background:#ff5f57}.dot:nth-child(2){background:#febc2e}.dot:nth-child(3){background:#28c840}
 .url{margin-left:12px;flex:1;background:rgba(255,255,255,.06);border-radius:7px;padding:5px 12px;font-size:.72rem;color:rgba(255,255,255,.5)}
-.mock-site{padding:26px 26px 30px;background:linear-gradient(170deg,#131c2c 0%,#0d1420 100%);border-radius:0 0 16px 16px}
-.ms-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.mock-site{padding:26px 26px 28px;border-radius:0 0 16px 16px;background:linear-gradient(178deg,rgba(9,13,22,.42) 0%,rgba(9,13,22,.9) 80%),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=60&auto=format&fit=crop') center 38%/cover no-repeat #0d1420}
+.ms-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
 .ms-logo{font-family:var(--font-display);font-weight:700;font-size:.95rem;color:#fff}
-.ms-links{display:flex;gap:14px}
-.ms-links i{display:block;width:34px;height:6px;border-radius:3px;background:rgba(255,255,255,.14)}
-.ms-h1{font-family:var(--font-display);font-weight:700;font-size:1.5rem;line-height:1.2;color:#fff;margin-bottom:10px}
+.ms-menu{font-size:.6rem;color:rgba(255,255,255,.7)}
+.ms-call{font-size:.6rem;font-weight:700;color:#1a1206;background:var(--grad);padding:5px 11px;border-radius:6px}
+.ms-h1{font-family:var(--font-display);font-weight:700;font-size:1.5rem;line-height:1.2;color:#fff;margin-bottom:8px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
 .ms-h1 b{color:var(--amber)}
-.ms-sub{width:75%;height:8px;border-radius:4px;background:rgba(255,255,255,.14);margin-bottom:8px}
-.ms-sub.s2{width:55%;margin-bottom:20px}
-.ms-btn{display:inline-block;background:var(--grad);color:#1a1206;font-weight:700;font-size:.78rem;padding:9px 18px;border-radius:8px;margin-bottom:24px}
-.ms-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.ms-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:13px}
-.ms-card .ic{width:24px;height:24px;border-radius:7px;background:rgba(245,165,36,.85);margin-bottom:9px}
-.ms-card i{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.16);margin-bottom:5px}
-.ms-card i.short{width:60%}
+.ms-sub{font-size:.68rem;color:rgba(255,255,255,.8);margin-bottom:16px;max-width:88%;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.ms-row{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.ms-btn{display:inline-block;background:var(--grad);color:#1a1206;font-weight:700;font-size:.7rem;padding:8px 16px;border-radius:8px}
+.ms-stars{font-size:.6rem;color:rgba(255,255,255,.85)}
+.ms-stars b{color:var(--amber);letter-spacing:1px}
+.ms-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.ms-card{background:rgba(11,17,28,.72);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:11px 12px;backdrop-filter:blur(6px)}
+.ms-card h5{font-family:var(--font-display);font-size:.64rem;color:#fff;margin-bottom:3px}
+.ms-card p{font-size:.55rem;color:rgba(255,255,255,.65);line-height:1.45}
 .chip{position:absolute;background:rgba(16,23,36,.92);border:1px solid var(--line-dark);backdrop-filter:blur(10px);border-radius:14px;padding:13px 17px;box-shadow:0 18px 44px rgba(0,0,0,.45);animation:float 5.5s ease-in-out infinite}
 .chip .big{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:#fff;display:flex;align-items:center;gap:8px}
 .chip .small{font-size:.72rem;color:rgba(255,255,255,.55)}
@@ -168,20 +169,23 @@ nav.scrolled{background:rgba(10,14,20,.85);backdrop-filter:blur(14px);box-shadow
 .ba-frame{position:relative;margin-top:56px;border-radius:20px;overflow:hidden;border:1px solid var(--line-dark);box-shadow:0 40px 90px rgba(0,0,0,.5);user-select:none;touch-action:none;cursor:ew-resize;aspect-ratio:16/10;max-height:560px}
 .ba-layer{position:absolute;inset:0;overflow:hidden}
 /* AFTER (base layer) — modern mini site */
-.after-site{position:absolute;inset:0;background:linear-gradient(165deg,#101a29 0%,#0b111c 100%);padding:5% 6%;display:flex;flex-direction:column}
+.after-site{position:absolute;inset:0;background:linear-gradient(178deg,rgba(8,12,20,.45) 0%,rgba(8,12,20,.92) 82%),url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=60&auto=format&fit=crop') center 30%/cover no-repeat #0b111c;padding:5% 6%;display:flex;flex-direction:column}
 .as-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:5.5%}
 .as-logo{font-family:var(--font-display);font-weight:700;font-size:clamp(.8rem,1.6vw,1.15rem);color:#fff}
 .as-logo b{color:var(--amber)}
 .as-cta{background:var(--grad);color:#1a1206;font-weight:700;font-size:clamp(.55rem,1.1vw,.8rem);padding:.6em 1.3em;border-radius:.55em}
-.as-h1{font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem,3.4vw,2.6rem);line-height:1.12;color:#fff;max-width:70%;margin-bottom:2.5%}
+.as-menu{font-size:clamp(.5rem,1vw,.75rem);color:rgba(255,255,255,.75)}
+.as-badges{display:flex;gap:2%;margin-bottom:5%;flex-wrap:wrap}
+.as-badges span{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(5px);color:rgba(255,255,255,.88);font-size:clamp(.48rem,.95vw,.72rem);padding:.45em 1.1em;border-radius:99px;white-space:nowrap}
+.as-h1{font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem,3.4vw,2.6rem);line-height:1.12;color:#fff;max-width:70%;margin-bottom:2.5%;text-shadow:0 2px 20px rgba(0,0,0,.55)}
 .as-h1 b{color:var(--amber)}
-.as-sub{color:rgba(255,255,255,.6);font-size:clamp(.6rem,1.3vw,.95rem);max-width:55%;margin-bottom:4%}
+.as-sub{color:rgba(255,255,255,.78);font-size:clamp(.6rem,1.3vw,.95rem);max-width:55%;margin-bottom:4%;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 .as-row{display:flex;gap:2.5%;align-items:center;margin-bottom:6%}
 .as-btn{background:var(--grad);color:#1a1206;font-weight:700;font-size:clamp(.6rem,1.2vw,.9rem);padding:.7em 1.5em;border-radius:.6em}
 .as-stars{font-size:clamp(.55rem,1.1vw,.8rem);color:rgba(255,255,255,.65)}
 .as-stars b{color:var(--amber);letter-spacing:.15em}
 .as-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5%;margin-top:auto}
-.as-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:.8em;padding:4% 4.5%}
+.as-card{background:rgba(10,15,24,.68);border:1px solid rgba(255,255,255,.14);border-radius:.8em;padding:4% 4.5%;backdrop-filter:blur(6px)}
 .as-card h4{font-family:var(--font-display);color:#fff;font-size:clamp(.6rem,1.25vw,.9rem);margin-bottom:.4em}
 .as-card p{color:rgba(255,255,255,.5);font-size:clamp(.5rem,1vw,.75rem);line-height:1.45}
 /* BEFORE (clipped overlay) — 2012 site */
@@ -343,16 +347,19 @@ footer a:hover{color:#fff}
         <div class="mock-site">
           <div class="ms-nav">
             <span class="ms-logo">McConnell<span style="color:var(--amber)">Roofing</span></span>
-            <span class="ms-links"><i></i><i></i><i></i></span>
+            <span class="ms-menu">Services · Gallery · Reviews</span>
+            <span class="ms-call">028 9024 1234</span>
           </div>
           <div class="ms-h1">Belfast's trusted roofers, <b>since 1998</b></div>
-          <div class="ms-sub"></div>
-          <div class="ms-sub s2"></div>
-          <span class="ms-btn">Get a free quote</span>
+          <p class="ms-sub">Repairs, re-roofs &amp; flat roofs across greater Belfast. Free quotes within 24 hours, fully insured.</p>
+          <div class="ms-row">
+            <span class="ms-btn">Get a free quote</span>
+            <span class="ms-stars"><b>★★★★★</b> 4.9 · 120+ reviews</span>
+          </div>
           <div class="ms-cards">
-            <div class="ms-card"><span class="ic"></span><i></i><i class="short"></i></div>
-            <div class="ms-card"><span class="ic"></span><i></i><i class="short"></i></div>
-            <div class="ms-card"><span class="ic"></span><i></i><i class="short"></i></div>
+            <div class="ms-card"><h5>Roof repairs</h5><p>Leaks &amp; slipped slates fixed fast</p></div>
+            <div class="ms-card"><h5>Full re-roofs</h5><p>Tile &amp; slate, 10-year guarantee</p></div>
+            <div class="ms-card"><h5>Flat roofs</h5><p>EPDM &amp; fibreglass that lasts</p></div>
           </div>
         </div>
       </div>
@@ -409,6 +416,7 @@ footer a:hover{color:#fff}
         <div class="after-site">
           <div class="as-nav">
             <span class="as-logo">McConnell<b>Roofing</b></span>
+            <span class="as-menu">Home · Services · Gallery · Reviews</span>
             <span class="as-cta">Call now</span>
           </div>
           <div class="as-h1">Roof repairs &amp; replacements across <b>Belfast</b></div>
@@ -416,6 +424,11 @@ footer a:hover{color:#fff}
           <div class="as-row">
             <span class="as-btn">Get a free quote</span>
             <span class="as-stars"><b>★★★★★</b> 4.9 · 120+ Google reviews</span>
+          </div>
+          <div class="as-badges">
+            <span>✓ Fully insured</span>
+            <span>✓ 10-year guarantee</span>
+            <span>✓ Free quotes in 24h</span>
           </div>
           <div class="as-cards">
             <div class="as-card"><h4>Roof repairs</h4><p>Slipped slates, leaks &amp; storm damage fixed fast.</p></div>
