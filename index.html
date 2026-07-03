@@ -67,6 +67,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+::selection{background:var(--amber);color:#1a1206}
 body{font-family:var(--font-body);color:var(--ink);background:var(--dark);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
@@ -105,7 +106,11 @@ nav.scrolled{background:rgba(10,14,20,.85);backdrop-filter:blur(14px);box-shadow
 .nav-toggle{display:none;background:none;border:none;font-size:1.7rem;cursor:pointer;color:#fff}
 
 /* ============ HERO ============ */
-.hero{position:relative;background:var(--dark);color:#fff;padding:190px 0 120px;overflow:hidden}
+.hero{position:relative;background:var(--dark);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;color:#fff;padding:190px 0 120px;overflow:hidden}
+.avail{display:inline-flex;align-items:center;gap:9px;background:rgba(57,211,187,.08);border:1px solid rgba(57,211,187,.25);color:rgba(255,255,255,.85);font-size:.82rem;font-weight:600;padding:8px 16px;border-radius:99px;margin-bottom:26px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--mint);animation:pulse 2s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(57,211,187,.5)}50%{box-shadow:0 0 0 6px rgba(57,211,187,0)}}
+@media(prefers-reduced-motion:reduce){.avail i{animation:none}}
 .hero::before{content:"";position:absolute;top:-220px;right:-140px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,36,.16),transparent 65%);pointer-events:none}
 .hero::after{content:"";position:absolute;bottom:-260px;left:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(57,211,187,.10),transparent 65%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2}
@@ -222,11 +227,11 @@ nav.scrolled{background:rgba(10,14,20,.85);backdrop-filter:blur(14px);box-shadow
 .ex-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(14,19,25,.12)}
 .ex-bar{display:flex;gap:5px;padding:10px 12px;background:#e9edf1;border-bottom:1px solid var(--line)}
 .ex-bar i{width:8px;height:8px;border-radius:50%;background:#c7ced6}
-.ex-shot{aspect-ratio:16/10;padding:20px;display:flex;flex-direction:column;justify-content:center}
-.ex-shot .xl{font-weight:700;font-size:.66rem;margin-bottom:12px}
-.ex-shot .xh{font-size:1.08rem;line-height:1.15;margin-bottom:9px;font-weight:700}
-.ex-shot .xs{font-size:.62rem;opacity:.78;margin-bottom:14px}
-.ex-shot .xb{align-self:flex-start;font-size:.58rem;font-weight:700;padding:6px 13px;border-radius:6px}
+.ex-shot{position:relative;aspect-ratio:16/11;overflow:hidden}
+.ex-shot iframe{position:absolute;top:0;left:0;width:1280px;height:880px;border:0;transform-origin:top left;pointer-events:none;background:transparent}
+.ex-shot::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -34px 30px -22px rgba(14,19,25,.28)}
+.ex-hint{position:absolute;bottom:10px;right:12px;z-index:2;background:rgba(10,14,20,.78);color:rgba(255,255,255,.9);font-size:.68rem;font-weight:700;padding:5px 12px;border-radius:99px;backdrop-filter:blur(6px);opacity:0;transform:translateY(4px);transition:opacity .25s,transform .25s}
+.ex-card:hover .ex-hint{opacity:1;transform:none}
 .ex-meta{padding:22px 24px 26px;display:block}
 .ex-meta h3{font-size:1.1rem;margin-bottom:6px}
 .ex-meta p{font-size:.9rem;color:var(--ink-soft);margin-bottom:12px}
@@ -239,7 +244,9 @@ nav.scrolled{background:rgba(10,14,20,.85);backdrop-filter:blur(14px);box-shadow
 .bento-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(14,19,25,.09)}
 .bento-card.wide{grid-column:span 2;background:var(--dark-2);border-color:var(--line-dark);color:#fff}
 .bento-card.wide p{color:var(--white-soft)}
-.bento-card .ic{width:46px;height:46px;border-radius:13px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:20px;box-shadow:0 8px 20px rgba(245,165,36,.3)}
+.bento-card .ic{width:46px;height:46px;border-radius:13px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 20px rgba(245,165,36,.3)}
+.bento-card .ic svg{width:22px;height:22px;stroke:#1a1206;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.problem-card:hover,.bento-card:not(.wide):hover,.step:hover,.price-card:not(.featured):hover{border-color:rgba(245,165,36,.5)}
 .bento-card h3{font-size:1.12rem;margin-bottom:8px}
 .bento-card p{font-size:.94rem;color:var(--ink-soft)}
 .stat-row{display:flex;gap:44px;margin-top:26px;flex-wrap:wrap}
@@ -306,7 +313,8 @@ details .faq-body{padding:0 26px 24px;color:var(--ink-soft);font-size:.95rem}
 .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;margin-top:52px;position:relative;z-index:2}
 .contact-info p{color:var(--white-soft);margin-bottom:30px}
 .contact-info .line{display:flex;gap:15px;align-items:center;margin-bottom:18px;font-weight:600}
-.contact-info .line span{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid var(--line-dark);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+.contact-info .line span{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid var(--line-dark);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-info .line span svg{width:19px;height:19px;stroke:var(--amber);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 form{background:rgba(255,255,255,.045);border:1px solid var(--line-dark);border-radius:22px;padding:38px;backdrop-filter:blur(10px)}
 .field{margin-bottom:20px}
 label{display:block;font-weight:600;font-size:.86rem;margin-bottom:8px;color:rgba(255,255,255,.85)}
@@ -359,6 +367,7 @@ footer a:hover{color:#fff}
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
+      <span class="avail reveal in"><i></i>Taking on new clients — 3 launch-price spots left</span>
       <h1>Websites that turn Google searches into <span class="grad-text">phone calls.</span></h1>
       <p class="sub">Fixed-price websites for Belfast trades, garages and local businesses. Built in days, not months — designed to do one thing: win you work.</p>
       <div class="hero-ctas">
@@ -501,11 +510,9 @@ footer a:hover{color:#fff}
     <div class="ex-grid">
       <a class="ex-card reveal" href="demos/plumber.html">
         <span class="ex-bar"><i></i><i></i><i></i></span>
-        <span class="ex-shot" style="background:linear-gradient(120deg,#0d2b45,#16456e);color:#fff">
-          <span class="xl" style="font-family:var(--font-display);text-transform:uppercase">Lagan <span style="color:#ff7a1a">Plumbing</span> &amp; Heating</span>
-          <span class="xh" style="font-family:var(--font-display);text-transform:uppercase">Belfast's 24/7 emergency plumber</span>
-          <span class="xs">Gas Safe · no call-out charge · 45 min response</span>
-          <span class="xb" style="background:#ff7a1a;color:#fff">📞 CALL NOW</span>
+        <span class="ex-shot" style="background:#0d2b45">
+          <iframe src="demos/plumber.html" loading="lazy" tabindex="-1" title="Lagan Plumbing demo preview" aria-hidden="true"></iframe>
+          <span class="ex-hint">Hover to scroll · tap to open</span>
         </span>
         <span class="ex-meta">
           <h3>The trade site</h3>
@@ -515,11 +522,9 @@ footer a:hover{color:#fff}
       </a>
       <a class="ex-card reveal d1" href="demos/fitness.html">
         <span class="ex-bar"><i></i><i></i><i></i></span>
-        <span class="ex-shot" style="background:#0c0c0e;color:#f5f5f2">
-          <span class="xl" style="font-family:var(--font-display);text-transform:uppercase">Forge<span style="color:#d4f927">.</span></span>
-          <span class="xh" style="font-family:var(--font-display);text-transform:uppercase">Stronger in <span style="color:#d4f927">12 weeks</span> — or you don't pay</span>
-          <span class="xs">1:1 coaching · small group · timetable</span>
-          <span class="xb" style="background:#d4f927;color:#111">FREE CONSULT</span>
+        <span class="ex-shot" style="background:#0c0c0e">
+          <iframe src="demos/fitness.html" loading="lazy" tabindex="-1" title="Forge Fitness demo preview" aria-hidden="true"></iframe>
+          <span class="ex-hint">Hover to scroll · tap to open</span>
         </span>
         <span class="ex-meta">
           <h3>The fitness site</h3>
@@ -529,11 +534,9 @@ footer a:hover{color:#fff}
       </a>
       <a class="ex-card reveal d2" href="demos/cafe.html">
         <span class="ex-bar"><i></i><i></i><i></i></span>
-        <span class="ex-shot" style="background:#f7f1e7;color:#2f2119">
-          <span class="xl" style="font-family:Georgia,serif">Hazel <em style="color:#c96f4a">&amp;</em> Stone</span>
-          <span class="xh" style="font-family:Georgia,serif">Slow mornings, <em style="color:#c96f4a">proper coffee.</em></span>
-          <span class="xs">menu · hours · find us on Botanic Avenue</span>
-          <span class="xb" style="background:#c96f4a;color:#f7f1e7;border-radius:99px">SEE THE MENU</span>
+        <span class="ex-shot" style="background:#f7f1e7">
+          <iframe src="demos/cafe.html" loading="lazy" tabindex="-1" title="Hazel &amp; Stone demo preview" aria-hidden="true"></iframe>
+          <span class="ex-hint">Hover to scroll · tap to open</span>
         </span>
         <span class="ex-meta">
           <h3>The local shop site</h3>
@@ -552,7 +555,7 @@ footer a:hover{color:#fff}
     <p class="lede reveal d1">Every site is built around how your customers actually behave: they search, they skim, they check your reviews, and they ring you. We optimise every step.</p>
     <div class="bento">
       <div class="bento-card wide reveal">
-        <div class="ic">🔍</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <h3>Found on Google</h3>
         <p>Built to rank for “your trade + your area” searches, with your Google Business profile set up properly — the single highest-impact thing most local businesses never do.</p>
         <div class="stat-row">
@@ -562,22 +565,22 @@ footer a:hover{color:#fff}
         </div>
       </div>
       <div class="bento-card reveal d1">
-        <div class="ic">📱</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <h3>Built for mobile</h3>
         <p>Tap-to-call and tap-to-WhatsApp buttons front and centre, because that's how customers reach you.</p>
       </div>
       <div class="bento-card reveal">
-        <div class="ic">⭐</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <h3>Reviews that sell</h3>
         <p>Your best Google reviews pulled onto the site — word of mouth is your strongest asset, so we put it to work.</p>
       </div>
       <div class="bento-card reveal d1">
-        <div class="ic">📩</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
         <h3>Leads straight to you</h3>
         <p>Quote-request forms that land in your inbox or phone instantly. No leads lost in a dusty mailbox.</p>
       </div>
       <div class="bento-card reveal d2">
-        <div class="ic">📸</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
         <h3>Photos of real work</h3>
         <p>Job galleries and before-and-afters that show what you actually do — they close jobs on their own.</p>
       </div>
@@ -725,8 +728,8 @@ footer a:hover{color:#fff}
     <div class="contact-grid">
       <div class="contact-info reveal">
         <p>Tell us a bit about your business and we'll send a free homepage design within 48 hours. No obligation, no pushy follow-ups — if it's not for you, that's grand.</p>
-        <div class="line"><span>✉️</span> oisinmcnicholl4@gmail.com</div>
-        <div class="line"><span>📍</span> Belfast — everything handled remotely, no meetings needed</div>
+        <div class="line"><span><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span> oisinmcnicholl4@gmail.com</div>
+        <div class="line"><span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span> Belfast — everything handled remotely, no meetings needed</div>
       </div>
       <form class="reveal d1" action="https://formsubmit.co/oisinmcnicholl4@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New enquiry — Nisio Web Studio">
@@ -805,6 +808,27 @@ ba.addEventListener('pointerdown', e => { dragging = true; ba.setPointerCapture(
 ba.addEventListener('pointermove', e => { if (dragging) setPos(e.clientX); });
 ba.addEventListener('pointerup', () => dragging = false);
 ba.addEventListener('pointercancel', () => dragging = false);
+
+// live demo previews: scale full pages down to fit their cards
+const shots = document.querySelectorAll('.ex-shot iframe');
+const sizeShots = () => shots.forEach(f => {
+  const shot = f.parentElement;
+  const s = shot.clientWidth / 1280;
+  f.style.transform = `scale(${s})`;
+  f.style.height = (shot.clientHeight / s) + 'px';
+});
+addEventListener('resize', sizeShots, {passive:true});
+sizeShots();
+
+// gently scroll the embedded demo on hover (same-origin, so this is allowed)
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.ex-card').forEach(card => {
+    const f = card.querySelector('iframe');
+    if (!f) return;
+    card.addEventListener('mouseenter', () => { try { f.contentWindow.scrollTo({top: 560, behavior: 'smooth'}); } catch (e) {} });
+    card.addEventListener('mouseleave', () => { try { f.contentWindow.scrollTo({top: 0, behavior: 'smooth'}); } catch (e) {} });
+  });
+}
 </script>
 
 <!-- Analytics: sign up free at goatcounter.com (2 mins), then uncomment
