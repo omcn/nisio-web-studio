@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hazel &amp; Stone Coffee — Botanic Avenue, Belfast (Demo)</title>
+<meta name="description" content="Demo concept site by Nisio Web Studio — neighbourhood coffee shop on Botanic Avenue, Belfast.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f7f1e7;--cream-2:#efe6d7;--espresso:#2f2119;--roast:#4a362a;--terra:#c96f4a;--terra-d:#b25b38;
+  --line:#e2d6c4;--disp:'Fraunces',serif;--body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--espresso);background:var(--cream);line-height:1.7}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.1;letter-spacing:-0.01em}
+h2{font-size:clamp(2rem,4.5vw,2.9rem);margin-bottom:16px}
+h2 em{font-style:italic;color:var(--terra)}
+.lede{font-size:1.05rem;color:var(--roast);max-width:560px}
+.btn{display:inline-block;padding:15px 32px;font-weight:600;font-size:.95rem;text-decoration:none;border-radius:99px;transition:transform .15s,background .2s;cursor:pointer;border:none;font-family:var(--body)}
+.btn:hover{transform:translateY(-2px)}
+.btn-terra{background:var(--terra);color:var(--cream)}
+.btn-terra:hover{background:var(--terra-d)}
+.btn-line{border:1.5px solid var(--espresso);color:var(--espresso)}
+
+nav{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:var(--disp);font-weight:600;font-size:1.35rem;color:var(--espresso);text-decoration:none}
+.logo em{font-style:italic;color:var(--terra)}
+.nav-hours{font-size:.82rem;color:var(--roast)}
+
+.hero{background:var(--cream);padding:80px 0 90px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.2rem);margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero p{font-size:1.1rem;color:var(--roast);max-width:460px;margin-bottom:32px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.hero-note{font-size:.85rem;color:var(--roast);opacity:.85}
+.hero-img{border-radius:24px 24px 200px 24px;overflow:hidden;box-shadow:24px 24px 0 var(--cream-2);aspect-ratio:4/4.6;background:url('https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=900&q=60&auto=format&fit=crop') center/cover no-repeat var(--cream-2)}
+
+.menu-sec{background:var(--espresso);color:var(--cream)}
+.menu-sec h2{color:var(--cream)}
+.menu-sec .lede{color:rgba(247,241,231,.75)}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 56px;margin-top:44px;max-width:820px}
+.mi{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px dashed rgba(247,241,231,.25)}
+.mi .name{font-family:var(--disp);font-size:1.08rem}
+.mi .desc{font-size:.8rem;color:rgba(247,241,231,.6);display:block}
+.mi .price{font-family:var(--disp);color:var(--terra);font-size:1.05rem;white-space:nowrap}
+.menu-note{margin-top:30px;font-size:.85rem;color:rgba(247,241,231,.6);font-style:italic}
+
+.story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.story-img{border-radius:200px 24px 24px 24px;overflow:hidden;box-shadow:-24px 24px 0 var(--cream-2);aspect-ratio:4/4.2;background:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=60&auto=format&fit=crop') center/cover no-repeat var(--cream-2)}
+.story p{color:var(--roast);margin-bottom:14px}
+
+.info{background:var(--cream-2)}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:28px}
+.card h3{font-size:1.15rem;margin-bottom:12px}
+.card p,.card li{font-size:.92rem;color:var(--roast)}
+.card ul{list-style:none}
+.card li{display:flex;justify-content:space-between;padding:4px 0}
+.card .stars{color:var(--terra);letter-spacing:2px;margin-bottom:8px}
+
+footer{background:var(--espresso);color:rgba(247,241,231,.7);padding:32px 0;font-size:.85rem}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--cream)}
+
+.nisio-pill{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#0a0e14;color:rgba(255,255,255,.85);font-size:.8rem;padding:10px 18px;border-radius:99px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:200;border:1px solid rgba(255,255,255,.15);white-space:nowrap;font-family:var(--body)}
+.nisio-pill b{background:linear-gradient(92deg,#f5a524,#ff6d5a);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+@media(max-width:840px){
+  section{padding:58px 0}
+  .hero{padding:52px 0 64px}
+  .hero-grid,.story-grid,.info-grid{grid-template-columns:1fr}
+  .menu-grid{grid-template-columns:1fr}
+  .hero-img{box-shadow:14px 14px 0 var(--cream-2)}
+  .story-img{box-shadow:-14px 14px 0 var(--cream-2);order:-1}
+  .nav-hours{display:none}
+  .nisio-pill{font-size:.7rem;white-space:normal;text-align:center;max-width:88vw}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="#">Hazel <em>&amp;</em> Stone</a>
+    <span class="nav-hours">Open today 8am – 4pm · Botanic Avenue</span>
+    <a class="btn btn-terra" style="padding:10px 22px;font-size:.85rem" href="#find-us">Find us</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Slow mornings, <em>proper coffee.</em></h1>
+      <p>A neighbourhood coffee shop on Botanic Avenue — speciality roasts, bakes from our own oven, and nowhere you need to be.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-terra" href="#menu">See the menu</a>
+        <a class="btn btn-line" href="#find-us">Opening hours</a>
+      </div>
+      <p class="hero-note">☕ Voted one of Belfast's best flat whites — Belfast Live, 2025 (demo)</p>
+    </div>
+    <div class="hero-img" role="img" aria-label="The counter at Hazel & Stone"></div>
+  </div>
+</header>
+
+<section class="menu-sec" id="menu">
+  <div class="wrap">
+    <h2>The <em>menu</em></h2>
+    <p class="lede">Coffee from our friends at rotating local roasters. Bakes out of the oven by 9. When they're gone, they're gone.</p>
+    <div class="menu-grid">
+      <div class="mi"><div><span class="name">Flat white</span><span class="desc">double shot, velvet milk</span></div><span class="price">£3.40</span></div>
+      <div class="mi"><div><span class="name">Batch filter</span><span class="desc">today's single origin</span></div><span class="price">£2.80</span></div>
+      <div class="mi"><div><span class="name">Cortado</span><span class="desc">for people in a hurry, slowly</span></div><span class="price">£3.20</span></div>
+      <div class="mi"><div><span class="name">Iced oat latte</span><span class="desc">yes, even in January</span></div><span class="price">£3.80</span></div>
+      <div class="mi"><div><span class="name">Cinnamon knot</span><span class="desc">the one people cross town for</span></div><span class="price">£3.50</span></div>
+      <div class="mi"><div><span class="name">Sourdough toast</span><span class="desc">whipped butter, sea salt, honey</span></div><span class="price">£4.50</span></div>
+      <div class="mi"><div><span class="name">Breakfast bap</span><span class="desc">free-range egg, bacon, house relish</span></div><span class="price">£5.90</span></div>
+      <div class="mi"><div><span class="name">Soup + soda bread</span><span class="desc">changes daily, always comforting</span></div><span class="price">£5.50</span></div>
+    </div>
+    <p class="menu-note">Oat, soy and coconut milk — no extra charge. Everything can be takeaway.</p>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap story-grid">
+    <div class="story-img" role="img" aria-label="Inside Hazel & Stone"></div>
+    <div class="story">
+      <h2>Two mates, one <em>very</em> second-hand espresso machine.</h2>
+      <p>We opened Hazel &amp; Stone in 2021 with a rescued La Marzocco, a bank loan that made our mothers nervous, and a theory: Belfast deserved a coffee shop that treats a flat white like it matters.</p>
+      <p>Three years on, the machine's still going, the cinnamon knots sell out by eleven, and half our regulars have their order started before they reach the counter. Come be one of them.</p>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="find-us">
+  <div class="wrap">
+    <h2>Come say <em>hello</em></h2>
+    <div class="info-grid">
+      <div class="card">
+        <h3>Hours</h3>
+        <ul>
+          <li><span>Mon – Fri</span><b>8am – 4pm</b></li>
+          <li><span>Saturday</span><b>9am – 5pm</b></li>
+          <li><span>Sunday</span><b>10am – 3pm</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Find us</h3>
+        <p>74 Botanic Avenue<br>Belfast BT7 1JR (demo)</p>
+        <p style="margin-top:10px">Two minutes from Botanic station, next to the good bookshop.</p>
+      </div>
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <h3>"Best flat white in the Quarter"</h3>
+        <p>"Staff remember your name and your order. The cinnamon knot is a religious experience." — Google review</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="yr"></span> Hazel &amp; Stone Coffee · Botanic Avenue, Belfast</div>
+    <div>@hazelandstonecoffee · hello@hazelandstone.demo</div>
+  </div>
+</footer>
+
+<a class="nisio-pill" href="../index.html">⚡ Demo concept by <b>Nisio Web Studio</b> — get a site like this from £450</a>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -216,6 +216,23 @@ nav.scrolled{background:rgba(10,14,20,.85);backdrop-filter:blur(14px);box-shadow
 .ba-tag.after-tag{right:18px;background:var(--grad);color:#1a1206}
 .ba-hint{text-align:center;margin-top:22px;color:rgba(255,255,255,.5);font-size:.9rem}
 
+/* ============ EXAMPLES ============ */
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.ex-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.ex-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(14,19,25,.12)}
+.ex-bar{display:flex;gap:5px;padding:10px 12px;background:#e9edf1;border-bottom:1px solid var(--line)}
+.ex-bar i{width:8px;height:8px;border-radius:50%;background:#c7ced6}
+.ex-shot{aspect-ratio:16/10;padding:20px;display:flex;flex-direction:column;justify-content:center}
+.ex-shot .xl{font-weight:700;font-size:.66rem;margin-bottom:12px}
+.ex-shot .xh{font-size:1.08rem;line-height:1.15;margin-bottom:9px;font-weight:700}
+.ex-shot .xs{font-size:.62rem;opacity:.78;margin-bottom:14px}
+.ex-shot .xb{align-self:flex-start;font-size:.58rem;font-weight:700;padding:6px 13px;border-radius:6px}
+.ex-meta{padding:22px 24px 26px;display:block}
+.ex-meta h3{font-size:1.1rem;margin-bottom:6px}
+.ex-meta p{font-size:.9rem;color:var(--ink-soft);margin-bottom:12px}
+.ex-link{font-weight:700;font-size:.9rem;color:var(--amber-2)}
+@media(max-width:900px){.ex-grid{grid-template-columns:1fr}}
+
 /* ============ FEATURES (bento) ============ */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
 .bento-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;transition:transform .25s,box-shadow .25s}
@@ -330,6 +347,7 @@ footer a:hover{color:#fff}
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <ul class="nav-links">
       <li><a href="#difference">The difference</a></li>
+      <li><a href="#examples">Examples</a></li>
       <li><a href="#what-you-get">What you get</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -472,6 +490,58 @@ footer a:hover{color:#fff}
       <div class="ba-handle"></div>
     </div>
     <p class="ba-hint">← Drag anywhere on the image →</p>
+  </div>
+</section>
+
+<section class="light-soft" id="examples">
+  <div class="wrap">
+    <span class="kicker reveal">What we build</span>
+    <h2 class="reveal">Three businesses.<br>Three completely different sites.</h2>
+    <p class="lede reveal d1">Your site gets its own look — not a recoloured template. Tap any demo and poke around on your phone: this is the quality your site launches with.</p>
+    <div class="ex-grid">
+      <a class="ex-card reveal" href="demos/plumber.html">
+        <span class="ex-bar"><i></i><i></i><i></i></span>
+        <span class="ex-shot" style="background:linear-gradient(120deg,#0d2b45,#16456e);color:#fff">
+          <span class="xl" style="font-family:var(--font-display);text-transform:uppercase">Lagan <span style="color:#ff7a1a">Plumbing</span> &amp; Heating</span>
+          <span class="xh" style="font-family:var(--font-display);text-transform:uppercase">Belfast's 24/7 emergency plumber</span>
+          <span class="xs">Gas Safe · no call-out charge · 45 min response</span>
+          <span class="xb" style="background:#ff7a1a;color:#fff">📞 CALL NOW</span>
+        </span>
+        <span class="ex-meta">
+          <h3>The trade site</h3>
+          <p>Built for "need it fixed now" searches — phone number everywhere, trust badges, areas covered, quote form.</p>
+          <span class="ex-link">View live demo →</span>
+        </span>
+      </a>
+      <a class="ex-card reveal d1" href="demos/fitness.html">
+        <span class="ex-bar"><i></i><i></i><i></i></span>
+        <span class="ex-shot" style="background:#0c0c0e;color:#f5f5f2">
+          <span class="xl" style="font-family:var(--font-display);text-transform:uppercase">Forge<span style="color:#d4f927">.</span></span>
+          <span class="xh" style="font-family:var(--font-display);text-transform:uppercase">Stronger in <span style="color:#d4f927">12 weeks</span> — or you don't pay</span>
+          <span class="xs">1:1 coaching · small group · timetable</span>
+          <span class="xb" style="background:#d4f927;color:#111">FREE CONSULT</span>
+        </span>
+        <span class="ex-meta">
+          <h3>The fitness site</h3>
+          <p>For PTs, gyms and studios — offers, class timetable, results stories, and a booking call-to-action.</p>
+          <span class="ex-link">View live demo →</span>
+        </span>
+      </a>
+      <a class="ex-card reveal d2" href="demos/cafe.html">
+        <span class="ex-bar"><i></i><i></i><i></i></span>
+        <span class="ex-shot" style="background:#f7f1e7;color:#2f2119">
+          <span class="xl" style="font-family:Georgia,serif">Hazel <em style="color:#c96f4a">&amp;</em> Stone</span>
+          <span class="xh" style="font-family:Georgia,serif">Slow mornings, <em style="color:#c96f4a">proper coffee.</em></span>
+          <span class="xs">menu · hours · find us on Botanic Avenue</span>
+          <span class="xb" style="background:#c96f4a;color:#f7f1e7;border-radius:99px">SEE THE MENU</span>
+        </span>
+        <span class="ex-meta">
+          <h3>The local shop site</h3>
+          <p>For cafés, barbers and salons — menu or price list, opening hours, reviews, and how to find the door.</p>
+          <span class="ex-link">View live demo →</span>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 
