@@ -20,6 +20,13 @@
 <meta property="og:description" content="Fixed-price websites for Belfast trades and local businesses. Built to turn Google searches into phone calls.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://omcn.github.io/nisio-web-studio/">
+<meta property="og:image" content="https://omcn.github.io/nisio-web-studio/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%23f5a524"/><stop offset="1" stop-color="%23ff6d5a"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="%230a0e14"/><text x="32" y="45" font-family="Arial,sans-serif" font-size="38" font-weight="bold" text-anchor="middle" fill="url(%23g)">N</text></svg>'>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -256,6 +263,14 @@ nav.scrolled{background:rgba(10,14,20,.85);backdrop-filter:blur(14px);box-shadow
 .strip .wrap{position:relative;z-index:2}
 .strip h2{font-size:clamp(1.9rem,4vw,2.9rem)}
 .strip p{color:var(--white-soft);max-width:640px;margin:0 auto 36px;font-size:1.08rem}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center}
+.avatar{width:180px;height:180px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:4.4rem;font-weight:700;color:#1a1206;box-shadow:0 24px 54px rgba(245,165,36,.35);flex-shrink:0}
+.about-points{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;list-style:none}
+.about-points li{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:var(--ink-soft)}
+.about-points li::before{content:"✓";color:var(--amber-2);font-weight:800}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:36px}.avatar{width:130px;height:130px;font-size:3.2rem}}
 
 /* ============ FAQ ============ */
 .faq-list{max-width:780px;margin:52px auto 0}
@@ -584,6 +599,22 @@ footer a:hover{color:#fff}
   </div>
 </div>
 
+<section class="light-soft" id="about">
+  <div class="wrap about-grid">
+    <div class="avatar reveal">O</div>
+    <div>
+      <span class="kicker reveal">Who you're dealing with</span>
+      <h2 class="reveal">One engineer. No account managers,<br>no agency waffle.</h2>
+      <p class="lede reveal d1">I'm Oisín — a software engineer based in Belfast. When you work with Nisio, you deal directly with the person building your site: one conversation, straight answers, and a site live in days because there's no chain of hand-offs.</p>
+      <ul class="about-points reveal d2">
+        <li>Professional software engineer</li>
+        <li>Born &amp; based in Belfast</li>
+        <li>Replies within one working day</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="light" id="faq">
   <div class="wrap">
     <span class="kicker reveal">FAQ</span>
@@ -655,7 +686,7 @@ footer a:hover{color:#fff}
           <textarea id="msg" name="message" rows="3" placeholder="What kind of work do you want more of?"></textarea>
         </div>
         <button class="btn btn-primary" type="submit">Send — get my free mock-up</button>
-        <p class="form-note">We reply within one working day. No spam, ever.</p>
+        <p class="form-note">We reply within one working day. No spam, ever. By sending you agree to our <a href="privacy.html" style="color:rgba(255,255,255,.65)">privacy notice</a>.</p>
       </form>
     </div>
   </div>
@@ -664,7 +695,7 @@ footer a:hover{color:#fff}
 <footer>
   <div class="wrap foot-inner">
     <div>© <span id="yr"></span> Nisio Web Studio · Belfast, Northern Ireland</div>
-    <div><a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a> · <a href="#contact">Contact</a></div>
+    <div><a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a> · <a href="#contact">Contact</a> · <a href="privacy.html">Privacy</a></div>
   </div>
 </footer>
 
@@ -705,5 +736,10 @@ ba.addEventListener('pointermove', e => { if (dragging) setPos(e.clientX); });
 ba.addEventListener('pointerup', () => dragging = false);
 ba.addEventListener('pointercancel', () => dragging = false);
 </script>
+
+<!-- Analytics: sign up free at goatcounter.com (2 mins), then uncomment
+     this line and replace YOURCODE with your GoatCounter code:
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 </body>
 </html>
