@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's get started — Nisio Web Studio</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0e14">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%23f5a524"/><stop offset="1" stop-color="%23ff6d5a"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="%230a0e14"/><text x="32" y="45" font-family="Arial,sans-serif" font-size="38" font-weight="bold" text-anchor="middle" fill="url(%23g)">N</text></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#0a0e14;--line-dark:rgba(255,255,255,.1);--amber:#f5a524;--grad:linear-gradient(92deg,#f5a524 0%,#ff8a3d 55%,#ff6d5a 100%);--soft:rgba(255,255,255,.72)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--dark);background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:26px 26px;color:#fff;line-height:1.65;padding:40px 20px 80px}
+.wrap{max-width:640px;margin:0 auto}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:#fff;text-decoration:none;display:inline-block;margin-bottom:40px}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--soft);margin-bottom:38px;font-size:1.02rem}
+form{background:rgba(255,255,255,.045);border:1px solid var(--line-dark);border-radius:20px;padding:34px;backdrop-filter:blur(10px)}
+.field{margin-bottom:22px}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:8px}
+label small{display:block;font-weight:400;color:rgba(255,255,255,.5);font-size:.8rem;margin-top:2px}
+input,textarea,select{width:100%;padding:14px 16px;border:1px solid var(--line-dark);border-radius:11px;font:inherit;font-size:.95rem;background:rgba(255,255,255,.05);color:#fff}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.35)}
+select option{color:#0e1319}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--amber);background:rgba(255,255,255,.08)}
+button{width:100%;padding:17px;border:none;border-radius:12px;background:var(--grad);color:#1a1206;font:inherit;font-weight:700;font-size:1.05rem;cursor:pointer;transition:transform .15s}
+button:hover{transform:translateY(-2px)}
+.note{font-size:.8rem;color:rgba(255,255,255,.45);margin-top:14px;text-align:center}
+.note a{color:rgba(255,255,255,.65)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="logo" href="index.html">Nisio<span>Web</span>Studio</a>
+  <h1>Brilliant — let's build <em>your site.</em></h1>
+  <p class="sub">Eight quick questions. Rough answers are fine — this just gives us everything we need to design your homepage. Takes about three minutes.</p>
+
+  <form action="https://formsubmit.co/oisinmcnicholl4@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New client intake — Nisio Web Studio">
+    <input type="hidden" name="_template" value="table">
+    <div class="field">
+      <label for="name">Your name</label>
+      <input id="name" name="name" required placeholder="e.g. Marty McConnell">
+    </div>
+    <div class="field">
+      <label for="business">Business name &amp; what you do</label>
+      <input id="business" name="business" required placeholder="e.g. McConnell Roofing — roof repairs & re-roofs">
+    </div>
+    <div class="field">
+      <label for="work">What work do you want more of?<small>This shapes the whole site — be specific if you can.</small></label>
+      <textarea id="work" name="wanted_work" rows="2" required placeholder="e.g. Full re-roofs and flat roofs — less interested in small repairs"></textarea>
+    </div>
+    <div class="field">
+      <label for="area">What area do you cover?</label>
+      <input id="area" name="area" required placeholder="e.g. Belfast, Lisburn, anywhere within 20 miles">
+    </div>
+    <div class="field">
+      <label for="phone">Business phone number &amp; hours<small>As it should appear on the site.</small></label>
+      <input id="phone" name="phone_hours" required placeholder="e.g. 07XX XXX XXX, Mon–Sat 8am–6pm">
+    </div>
+    <div class="field">
+      <label for="photos">Have you got photos of your work?</label>
+      <select id="photos" name="photos">
+        <option>Yes — plenty on my phone</option>
+        <option>A few, could take more</option>
+        <option>Not really — tell me what to snap</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="existing">Anything online already?<small>Old website, Facebook page, Instagram — paste links.</small></label>
+      <input id="existing" name="existing" placeholder="e.g. facebook.com/mcconnellroofing">
+    </div>
+    <div class="field">
+      <label for="msg">Anything else we should know? (optional)</label>
+      <textarea id="msg" name="message" rows="3" placeholder="Colours you like, sites you rate, anything at all"></textarea>
+    </div>
+    <button type="submit">Send — we'll start on your mock-up</button>
+    <p class="note">Sent straight to Oisín. Covered by our <a href="privacy.html">privacy notice</a>.</p>
+  </form>
+</div>
+</body>
+</html>
