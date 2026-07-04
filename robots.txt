@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://omcn.github.io/nisio-web-studio/sitemap.xml
+Sitemap: https://nisio.co.uk/sitemap.xml
