@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SMN Plumbing — 32 Years Fixing Northern Ireland's Plumbing</title>
-<meta name="description" content="SMN Plumbing — plumber with 32 years in the trade. Office hours 8–5, always on call, distance no object.">
+<meta name="description" content="SMN Plumbing — 32 years in the trade. Oil boilers, bathrooms, cylinders, leaks. Office hours 8–5, always on call, distance no object.">
 <meta name="robots" content="noindex">
-<!-- PREVIEW DRAFT — placeholders to fill before launch:
-     [ ] Phone number (search for 07XXX)
-     [ ] Real job photos (currently stock)
-     [ ] Gas Safe reg number IF he does gas work (boiler services currently listed cautiously)
+<!-- PREVIEW DRAFT — remaining before launch:
+     [ ] OFTEC registration? (oil boiler work confirmed from photos — badge needs his reg confirmation)
      [ ] His email for the enquiry form (currently routes to Oisín)
      [ ] Base town (currently just "Northern Ireland")
-     [ ] Real reviews once his Google profile exists (section stubbed out below)
+     [ ] 2-3 real customer quotes (reviews section stubbed)
+     [ ] Domain go-ahead: smnplumbing.co.uk (available)
+     [x] Phone number
+     [x] Real job photos
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +47,7 @@ nav{background:var(--navy);color:#fff}
 .nav-call{background:var(--orange);color:#fff;text-decoration:none;font-family:var(--disp);font-weight:700;font-size:1.15rem;padding:10px 20px;border-radius:8px;letter-spacing:.03em}
 .nav-call small{display:block;font-family:var(--body);font-size:.62rem;font-weight:600;letter-spacing:.08em;opacity:.85}
 
-.hero{background:linear-gradient(100deg,rgba(9,27,44,.93) 34%,rgba(9,27,44,.55)),url('https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1400&q=60&auto=format&fit=crop') center/cover no-repeat var(--navy);color:#fff;padding:96px 0}
+.hero{background:linear-gradient(100deg,rgba(9,27,44,.93) 34%,rgba(9,27,44,.6)),url('img/bathroom-new-2.jpg') center 60%/cover no-repeat var(--navy);color:#fff;padding:96px 0}
 .hero h1{font-size:clamp(2.6rem,6.5vw,4.4rem);font-weight:800;max-width:680px;margin-bottom:16px}
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero p{font-size:1.12rem;color:rgba(255,255,255,.85);max-width:540px;margin-bottom:30px}
@@ -65,7 +66,31 @@ nav{background:var(--navy);color:#fff}
 .svc.urgent p{color:rgba(255,255,255,.75)}
 .svc.urgent .ic{background:rgba(255,122,26,.18)}
 
-.stats{background:var(--navy);color:#fff;padding:56px 0}
+/* before/after sliders */
+.ba-sec{background:var(--navy);color:#fff}
+.ba-sec h2{color:#fff}
+.ba-sec .lede{color:rgba(255,255,255,.78)}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.ba-item h3{font-size:1.3rem;color:#fff;margin:18px 0 4px}
+.ba-item .cap{font-size:.9rem;color:rgba(255,255,255,.65)}
+.ba{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:928/1030;cursor:ew-resize;touch-action:none;user-select:none;box-shadow:0 24px 54px rgba(0,0,0,.4)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba img.before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;background:#fff;box-shadow:0 0 16px rgba(0,0,0,.55);pointer-events:none}
+.ba-handle::after{content:"◂ ▸";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;color:var(--ink);font-size:.72rem;font-weight:700;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.4);letter-spacing:1px}
+.ba-tag{position:absolute;top:12px;z-index:2;font-family:var(--disp);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:6px;pointer-events:none}
+.ba-tag.b{left:12px;background:rgba(0,0,0,.55);color:#fff}
+.ba-tag.a{right:12px;background:var(--orange);color:#fff}
+.ba-hint{text-align:center;margin-top:26px;color:rgba(255,255,255,.55);font-size:.9rem}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.gal figure{border-radius:12px;overflow:hidden;background:var(--soft);box-shadow:0 12px 30px rgba(13,43,69,.12)}
+.gal img{width:100%;aspect-ratio:1/1.1;object-fit:cover;display:block;transition:transform .3s}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figcaption{font-size:.82rem;color:var(--ink-soft);padding:10px 12px;font-weight:600}
+
+.stats{background:var(--navy);color:#fff;padding:56px 0;border-top:1px solid rgba(255,255,255,.08)}
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
 .stat .n{font-family:var(--disp);font-weight:800;font-size:3rem;color:var(--orange)}
 .stat .l{font-size:.88rem;color:rgba(255,255,255,.75)}
@@ -73,12 +98,13 @@ nav{background:var(--navy);color:#fff}
 .soft{background:var(--soft)}
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .about-grid p{color:var(--ink-soft);margin-bottom:14px}
-.about-img{border-radius:14px;aspect-ratio:4/3;background:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=60&auto=format&fit=crop') center/cover no-repeat var(--soft);box-shadow:0 24px 50px rgba(13,43,69,.18)}
+.about-img{border-radius:14px;overflow:hidden;box-shadow:0 24px 50px rgba(13,43,69,.18)}
+.about-img img{width:100%;display:block;aspect-ratio:4/4.4;object-fit:cover}
 
 .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .chips span{border:1.5px solid var(--line);border-radius:99px;padding:8px 18px;font-size:.9rem;font-weight:600;color:var(--ink-soft)}
 
-.cta-sec{background:linear-gradient(100deg,rgba(9,27,44,.95) 45%,rgba(9,27,44,.75)),url('https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1200&q=60&auto=format&fit=crop') center 70%/cover no-repeat var(--navy);color:#fff}
+.cta-sec{background:linear-gradient(100deg,rgba(9,27,44,.95) 45%,rgba(9,27,44,.8)),url('img/bathroom-new-1.jpg') center/cover no-repeat var(--navy);color:#fff}
 .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .cta-grid h2{color:#fff}
 .cta-grid .lede{color:rgba(255,255,255,.8)}
@@ -97,7 +123,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:30px 0;font-si
 
 @media(max-width:840px){
   section{padding:56px 0}
-  .grid3,.cta-grid,.about-grid{grid-template-columns:1fr}
+  .grid3,.cta-grid,.about-grid,.ba-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
   .stat-row{grid-template-columns:1fr;gap:30px}
   .nav-call{font-size:.95rem;padding:8px 14px}
 }
@@ -117,7 +144,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:30px 0;font-si
 <header class="hero">
   <div class="wrap">
     <h1><em>32 years</em> fixing Northern Ireland's plumbing</h1>
-    <p>Leaks, bursts, bathrooms and heating — sorted properly by a plumber who's seen it all twice. Office hours 8–5, on call whenever you need us.</p>
+    <p>Oil boilers, bathrooms, cylinders and leaks — sorted properly by a plumber who's seen it all twice. Office hours 8–5, on call whenever you need us.</p>
     <div class="hero-ctas">
       <a class="btn btn-orange" href="tel:+447876820725">📞 Call SMN now</a>
       <a class="btn btn-line" href="#quote">Get a free quote</a>
@@ -133,14 +160,58 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:30px 0;font-si
 <section id="services">
   <div class="wrap">
     <h2>What we fix</h2>
-    <p class="lede">From a weeping rad valve to a flooded kitchen — one number, one plumber, sorted.</p>
+    <p class="lede">From a weeping rad valve to a dead boiler on the coldest week of the year — one number, one plumber, sorted.</p>
     <div class="grid3">
       <div class="svc urgent"><div class="ic">🚨</div><h3>Emergency call-outs</h3><p>Bursts, leaks and floods don't wait for morning — neither do we. On call around the clock.</p></div>
-      <div class="svc"><div class="ic">💧</div><h3>Leaks &amp; burst pipes</h3><p>Found and fixed properly — the leak, not just the damp patch it left behind.</p></div>
+      <div class="svc"><div class="ic">🔥</div><h3>Oil boilers</h3><p>Replacements and servicing — old relics out, efficient new systems in. See the proof below.</p></div>
       <div class="svc"><div class="ic">🛁</div><h3>Bathrooms</h3><p>Suites, showers and full refits — plumbed right the first time.</p></div>
-      <div class="svc"><div class="ic">🌡️</div><h3>Heating &amp; radiators</h3><p>Radiators, cylinders, tanks and heating systems kept running as they should.</p></div>
+      <div class="svc"><div class="ic">🫙</div><h3>Cylinders &amp; tanks</h3><p>Hot water cylinders and storage tanks replaced with modern insulated units — pipework renewed properly.</p></div>
+      <div class="svc"><div class="ic">💧</div><h3>Leaks &amp; burst pipes</h3><p>Found and fixed properly — the leak, not just the damp patch it left behind.</p></div>
       <div class="svc"><div class="ic">🚿</div><h3>Taps, toilets &amp; showers</h3><p>The everyday jobs done properly — fitted, sealed, no drips, no call-backs.</p></div>
-      <div class="svc"><div class="ic">🔧</div><h3>The odd stuff</h3><p>32 years means there isn't much we haven't seen. If water runs through it, ask.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ba-sec" id="work">
+  <div class="wrap">
+    <h2>Before &amp; after — real jobs</h2>
+    <p class="lede">Not stock photos. These are SMN jobs — drag the slider and see what 32 years of experience does to a heating system.</p>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <div class="ba">
+          <img src="img/boiler-new.jpg" alt="New Grant Vortex oil boiler installed by SMN Plumbing">
+          <img class="before" src="img/boiler-old.jpg" alt="Old rusted oil boiler before replacement">
+          <span class="ba-tag b">Before</span>
+          <span class="ba-tag a">After</span>
+          <span class="ba-handle"></span>
+        </div>
+        <h3>Oil boiler replacement</h3>
+        <p class="cap">A relic that owed nobody anything, retired — new Grant Vortex fitted on the same spot.</p>
+      </div>
+      <div class="ba-item">
+        <div class="ba">
+          <img src="img/cylinder-new.jpg" alt="New insulated Gledhill hot water cylinder with renewed copper pipework">
+          <img class="before" src="img/cylinder-old.jpg" alt="Corroded thirty-year-old copper cylinder before replacement">
+          <span class="ba-tag b">Before</span>
+          <span class="ba-tag a">After</span>
+          <span class="ba-handle"></span>
+        </div>
+        <h3>Hot water cylinder</h3>
+        <p class="cap">Thirty-odd years of service out — insulated Gledhill in, pipework renewed while we were at it.</p>
+      </div>
+    </div>
+    <p class="ba-hint">← Drag anywhere on the photos →</p>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2>Recent work</h2>
+    <div class="gal">
+      <figure><img src="img/bathroom-new-1.jpg" alt="Finished modern bathroom by SMN Plumbing"><figcaption>Full bathroom refit</figcaption></figure>
+      <figure><img src="img/bathroom-new-2.jpg" alt="Modern bathroom with backlit mirror by SMN Plumbing"><figcaption>Vanity &amp; backlit mirror</figcaption></figure>
+      <figure><img src="img/bathroom-collage.jpg" alt="Before, during and after of a complete bathroom renovation"><figcaption>Refit, start to finish</figcaption></figure>
+      <figure><img src="img/boiler-new.jpg" alt="New Grant Vortex oil boiler installation"><figcaption>Grant Vortex install</figcaption></figure>
     </div>
   </div>
 </section>
@@ -160,11 +231,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:30px 0;font-si
       <p>SMN Plumbing has been fixing Northern Ireland's plumbing for 32 years — long enough that most of our work comes from the same families, farms and businesses coming back, and telling their neighbours.</p>
       <p>No call centres, no subcontractors, no van full of apprentices learning on your time. You ring, you get the plumber. It's worked since 1994 and we see no reason to change it.</p>
     </div>
-    <div class="about-img" role="img" aria-label="Bathroom plumbing work"></div>
+    <div class="about-img"><img src="img/cylinder-new.jpg" alt="Renewed copper pipework and new cylinder — SMN Plumbing workmanship"></div>
   </div>
 </section>
 
-<!-- REVIEWS: stubbed until real Google/Facebook reviews are supplied — do not invent -->
+<!-- REVIEWS: stubbed until real customer quotes are supplied — do not invent -->
 
 <section id="areas">
   <div class="wrap">
@@ -189,7 +260,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:30px 0;font-si
       <h3>Get a free quote</h3>
       <div class="field"><label>Your name</label><input name="name" required placeholder="e.g. Paddy Quinn"></div>
       <div class="field"><label>Phone number</label><input name="phone" required placeholder="Best number for a call back"></div>
-      <div class="field"><label>What's the job?</label><textarea name="job" rows="3" required placeholder="e.g. Hot water cylinder leaking in the roof space…"></textarea></div>
+      <div class="field"><label>What's the job?</label><textarea name="job" rows="3" required placeholder="e.g. Boiler's on its last legs — needs looked at before winter…"></textarea></div>
       <button class="btn btn-orange" type="submit">Send — free quote, same day</button>
     </form>
   </div>
@@ -202,6 +273,19 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:30px 0;font-si
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.querySelectorAll('.ba').forEach(ba => {
+  let dragging = false;
+  const setPos = x => {
+    const r = ba.getBoundingClientRect();
+    ba.style.setProperty('--pos', Math.min(98, Math.max(2, (x - r.left) / r.width * 100)) + '%');
+  };
+  ba.addEventListener('pointerdown', e => { dragging = true; ba.setPointerCapture(e.pointerId); setPos(e.clientX); });
+  ba.addEventListener('pointermove', e => { if (dragging) setPos(e.clientX); });
+  ba.addEventListener('pointerup', () => dragging = false);
+  ba.addEventListener('pointercancel', () => dragging = false);
+});
+</script>
 </body>
 </html>
